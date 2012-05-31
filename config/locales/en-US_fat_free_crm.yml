@@ -649,6 +649,7 @@ en-US:
   group_members: members
   groups: Groups
   groups_small: groups
+  group_small: group
 
   # Views -> Admin -> Users
   #----------------------------------------------------------------------------
