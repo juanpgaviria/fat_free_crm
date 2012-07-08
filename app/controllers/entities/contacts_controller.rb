@@ -22,6 +22,7 @@ class ContactsController < EntitiesController
   # GET /contacts
   #----------------------------------------------------------------------------
   def index
+    options  # Set options instance variables
     @contacts = get_contacts(:page => params[:page])
     
     respond_with @contacts do |format|
