@@ -1,0 +1,13 @@
+%li.highlight[product]
+	.tools{  :id => dom_id(product, :tools) }
+		= link_to_product_edit(product) << " | "
+		= link_to_product_confirm(product)
+
+
+	%span.black #{product.name}
+	%tt
+		= "- #{h(product.description)}" unless product.description.blank?
+
+	%dt{ :style => "padding: 2px 0px 0px 0px" }
+	%span.warn #{t(:product_created_on, nil)} #{product.created_at.to_date.to_s(:ddmmyy)}
+  

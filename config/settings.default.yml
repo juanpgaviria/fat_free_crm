@@ -51,7 +51,7 @@
 #
 # :host: "http://www.example.com"
 #
-:host: ""
+:host: "http://localhost"
 
 
 # Base URL

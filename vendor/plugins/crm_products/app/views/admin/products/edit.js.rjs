@@ -1,0 +1,15 @@
+id = dom_id(@product)
+
+if params[:cancel].true? # <----------------- Hide [Edit Product]
+  page.call "crm.hide_form", :create_product
+  page[id].replace :text => render(:partial =>"product", :locals => {:product => @product})
+else # <----------------------------------------  Show [Edit Product] form.
+  page[id].replace_html :partial => "edit"
+
+  page.call "crm.highlight_off", id               # Disable onMouseOver for the list item.
+  page.call "crm.hide_form", :create_product          # Hide [Create Product] form if any.
+  page.call "crm.flip_form", :edit_product
+  page.call "crm.set_title", :edit_product, t(:product)
+  page[:product_name].focus
+
+end

@@ -1,0 +1,6 @@
+id = dom_id(@product)
+page[id].visual_effect :blind_up, :duration => 0.25
+page[:flash].replace_html flash[:warning]
+page.call "crm.flash", :warning
+flash[:warning] = nil
+
