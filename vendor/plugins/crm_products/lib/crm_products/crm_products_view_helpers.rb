@@ -14,6 +14,7 @@ module CrmProducts
     #----------------------------------------------------------------------------    
     def get_products_colletion_select
       model = self.controller_name.singularize
+      puts "asdasdasdlkjaslkjhasd=========ASASDASDSAD=SADS=AD=DAS=DSADA=SD=ADASD=ASDS"       
       collection_select model, :product_ids, Product.find(:all), :id, :name, { }, { :multiple => true, :size => '10', :style => "width:240px" }
     end
     

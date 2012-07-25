@@ -25,7 +25,9 @@ EOS
   [ :campaign, :opportunity ].each do |model|
 
     define_method :"#{model}_top_section_bottom" do |view, context|
-      unless Product.find(:all).empty?  
+      #unless Product.find(:all).empty?
+      print Product.find(:all) 
+      unless false
         Haml::Engine.new(PRODUCTS_FIELD).render(view, :f => context[:f], :span => (model != :campaign ? 3 : 5))
       end
     end
